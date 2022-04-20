@@ -33,10 +33,6 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
-          
-      - name: Check folders
-        run: ls ./ -a
-     
-     
+                  
       - name: Build the API with .NET
         run: dotnet build ./OlympicGamesApp/OlympicGames.Api/OlympicGames.Api.sln --configuration Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
