@@ -39,4 +39,4 @@ jobs:
      
      
       - name: Build the API with .NET
-        run: dotnet build ./OlympicGames.Api/OlympicGames.Api.sln --configuration Release ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+        run: dotnet build ./OlympicGamesApp/OlympicGames.Api/OlympicGames.Api.sln --configuration Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
