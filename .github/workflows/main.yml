@@ -5,6 +5,7 @@ name: CI Merge and Test Webapp
 env: 
   DOTNET_VERSION: '6.0.x'
   AZURE_WEBAPP_PACKAGE_PATH: './BuildOutput'
+  AZURE_WEBAPP_NAME: 'OlympicGames'
   
 # Controls when the workflow will run
 on:
@@ -35,4 +36,11 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
                   
       - name: Build the API with .NET
-        run: dotnet build ./OlympicGamesApp/OlympicGames.Api/OlympicGames.Api.sln --configuration Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+        run: dotnet publish ./OlympicGamesApp/OlympicGames.Api/OlympicGames.Api.sln --configuration Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+      - name: Azure WebApp
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }} #Login for Build agent and Azure account to deploy 
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
