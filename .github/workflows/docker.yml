@@ -3,8 +3,8 @@ name: Docker Image CIOE
 on:
   push:
     branches: [ main ]
-    paths: 
-      - 'P_One_ConsoleApp/**/**'
+    #paths: 
+    #  - 'P_One_ConsoleApp/**/**'
 jobs:
   build:
     runs-on: ubuntu-latest
