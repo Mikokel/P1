@@ -36,6 +36,7 @@ jobs:
           
       - name: Check folders
         run: ls ./ -a
-          
+     
+     
       - name: Build the API with .NET
         run: dotnet build ./OlympicGames.Api/OlympicGames.Api.sln --configuration Release ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
