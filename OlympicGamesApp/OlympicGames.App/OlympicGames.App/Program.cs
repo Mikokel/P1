@@ -6,7 +6,7 @@ namespace OlympicGames.App
     {
         static async Task Main(string[] args)
         {
-            Uri uri = new Uri("https://localhost:7009");
+            Uri uri = new Uri("https://olympicgames.azurewebsites.net");
             IO io = new IO(uri);
             await io.BeginWebApp();
         }
