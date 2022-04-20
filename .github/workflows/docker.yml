@@ -23,7 +23,7 @@ jobs:
       run: docker build ./OlympicGamesApp/OlympicGames.App --tag olympicgames
       
     - name: Docker tagging
-      run: docker tag olympicgames ${{ secrets.DOCKER_HUB_USERNAME }}/p1:olympicgame
+      run: docker tag olympicgames ${{ secrets.DOCKER_HUB_USERNAME }}/p1:olympicgames
       
     - name: Deploy
-      run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/p1:olympicgame
+      run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/p1:olympicgames
