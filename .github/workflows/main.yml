@@ -39,7 +39,7 @@ jobs:
         run: dotnet publish ./OlympicGamesApp/OlympicGames.Api/OlympicGames.Api.sln --configuration Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
         
 
-      - name: Azure WebApp
+      - name: Azure WebApp1
         uses: Azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
