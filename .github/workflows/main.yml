@@ -35,4 +35,4 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
           
       - name: Build the API with .NET
-      - run: dotnet build ./OlympicAppApp/OlympicGames.Api/OlympicGames.Api.sln --configuration Release ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+        run: dotnet build ./OlympicAppApp/OlympicGames.Api/OlympicGames.Api.sln --configuration Release ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
