@@ -1,4 +1,4 @@
-name: Docker Image CIO
+name: Docker Image CIOE
 
 on:
   push:
