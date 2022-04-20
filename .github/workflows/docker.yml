@@ -20,10 +20,10 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
         
     - name: Build Env
-      run: docker build ./OlympicGamesApp/OlympicGames.App -t olympicgames
+      run: docker build -t ./OlympicGamesApp/OlympicGames.App:olympicgames
       
-    #- name: Docker tagging
-      #run: docker tag latest
+    - name: Docker tagging
+      run: docker tag ./OlympicGamesApp/OlympicGames.App:olympicgames ${{ secrets.DOCKER_HUB_USERNAME }}./OlympicGamesApp/OlympicGames.App:olympicgame
       
     - name: Deploy
-      run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}
+      run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}./OlympicGamesApp/OlympicGames.App:olympicgame
